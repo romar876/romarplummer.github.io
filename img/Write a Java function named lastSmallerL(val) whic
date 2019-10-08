@@ -1,0 +1,91 @@
+Write a Java function named lastSmallerL(val) which searches a sorted list for the last value that is
+smaller than val. When found, its position is returned. If no such value exists in the list, the
+function should return -1. (2 marks)
+
+public int lastSmallerL(val){
+	Node currentNode = L1;
+	int prevValue = 0;
+	int position = 0;
+
+	while (currentNode != null) {
+		if (val > currentNode.info || val < prevValue ) {
+			return position;
+		} 
+		position    = position + 1;
+		prevValue   = currentNode.info;
+		currentNode = currentNode.next 
+   }
+    return -1;
+
+}
+
+
+d. Write a Java function named lastSmallerA(val) which searches a sorted array for the last value that
+is smaller than val. When found, its position is returned. If no such value exists in the array, the
+function should return -1. (2 marks)
+
+public int lastSmallerA(val){
+	for (int i = 0; i < A1.length; i++) {
+		if (val > A1[i] || val < A1[i + 1] ) {
+			return i;
+		} 
+   }
+    return -1;
+
+}
+
+
+e. Write a Java function named insertSortedL(val) that uses lastSmallerL to insert an integer into a
+sorted list, in correct order. (4 marks)
+
+public void insertSortedL(val){
+
+	int position; 
+	Node currentNode =L1;
+	position = lastSmallerL(val);
+
+	for (int i = 0; i < position; i++) {
+		currentNode = currentNode.next;
+    }
+
+    Node newNode = new Node();
+    newNode.info = val;
+    newNode.next = currentNode.next;
+    currentNode.next = newNode;
+   
+}
+
+f. Write a Java function named insertSortedA(val) that uses lastSmallerA to insert an integer into a
+sorted array, in correct order. (6 marks)
+
+
+public void insertSortedA(val) {
+      int[]newA1 = new int[A1.length+1];
+      int insertPosition;
+
+      if(A1[A1.length] == null){
+
+      
+      }else{
+
+
+      }
+      insertPosition = lastSmallerA(val)+1;
+
+      for(int i = 0; i<a.length; i++) { 
+         if (i = insertPosition){
+         	newA1[i] = 
+         }
+      } 
+     
+}
+
+g. State one validation test needed in insertSortedA which is not needed in insertSortedL.(1 mark)
+check if the array if full u do not have to check if the list is full 
+
+h. Given the declarations: Node head, first, second;
+Write the pseudocode for a function concat(Node first, Node second) that accepts two lists, and
+then concatenates the second list to the first, returning the combined list. (10 marks)
+i. Write pseudocode for function printReverse(Node list) that accepts a list of Node and prints the
+list in reverse order.
+
